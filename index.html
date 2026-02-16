@@ -62,43 +62,7 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   </head>
   <body>
-    <!-- DARK MODE SLIDER -->
-    <button
-      class="dark-mode-toggle"
-      aria-label="Toggle dark mode"
-      title="Toggle dark/light mode"
-    >
-      <svg
-        class="sun-icon"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2" />
-        <path
-          d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-      </svg>
-      <svg
-        class="moon-icon"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M17 10.5C16.9 14.64 13.64 18 9.5 18C5.36 18 2 14.64 2 10.5C2 6.36 5.36 3 9.5 3C9.67 3 9.83 3.01 10 3.02C8.9 4.08 8.25 5.54 8.25 7.13C8.25 10.36 10.89 13 14.12 13C15.71 13 17.17 12.35 18.23 11.25C18.08 10.83 17.56 10.58 17 10.5Z"
-          fill="currentColor"
-        />
-      </svg>
-    </button>
-
+    <!-- DARK MODE SLIDER MOVED TO NAVBAR -->
     <!-- NAVIGATION BAR -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -118,6 +82,47 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
+        <button
+          class="dark-mode-toggle"
+          aria-label="Toggle dark mode"
+          title="Toggle dark/light mode"
+        >
+          <svg
+            class="sun-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="10"
+              cy="10"
+              r="4"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <svg
+            class="moon-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 10.5C16.9 14.64 13.64 18 9.5 18C5.36 18 2 14.64 2 10.5C2 6.36 5.36 3 9.5 3C9.67 3 9.83 3.01 10 3.02C8.9 4.08 8.25 5.54 8.25 7.13C8.25 10.36 10.89 13 14.12 13C15.71 13 17.17 12.35 18.23 11.25C18.08 10.83 17.56 10.58 17 10.5Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
       </div>
     </nav>
 
@@ -824,33 +829,27 @@
     </footer>
 
     <!-- PROJECT MODAL -->
-    <div
-      class="modal"
-      id="projectModal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modalTitle"
-    >
-      <div class="modal-overlay"></div>
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
+    <dialog id="projectModal" class="modal">
+      <div class="modal-wrapper">
+        <div class="modal-header">
+          <button class="btn-icon modal-close" aria-label="Close modal">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
         <div class="modal-body">
-          <!-- Content dynamically inserted by JavaScript -->
+          <!-- Content injected via JS -->
         </div>
       </div>
-    </div>
+    </dialog>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
